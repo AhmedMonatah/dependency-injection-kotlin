@@ -20,7 +20,11 @@ class FavProductsActivity : ComponentActivity() {
        // enableEdgeToEdge()
         setContent {
             val application = application as MyApplication
-            val viewModel = ViewModelProvider(this, application.appContainer.favFactory
+            val factory = FavProductFactory(application.appContainer.repo)
+
+            val viewModel = ViewModelProvider(
+                this,
+                factory
             )[FavProductsViewModel::class.java]
             FavProductsScreen(viewModel)
         }

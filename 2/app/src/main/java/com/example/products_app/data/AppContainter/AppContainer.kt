@@ -12,6 +12,5 @@ interface AppContainer {
     val dao: ProductsDao
     val service: ProductService
     val repo: ProductsRepository
-    val favFactory: FavProductFactory
-    val allFactory: AllProductFactory
+
 }

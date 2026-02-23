@@ -18,7 +18,11 @@ class AllProductsActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val application = application as MyApplication
-            val viewModel = ViewModelProvider(this, application.appContainer.allFactory
+            val factory = AllProductFactory(application.appContainer.repo)
+
+            val viewModel = ViewModelProvider(
+                this,
+                factory
             )[AllProductsViewModel::class.java]
             AllProductsScreen(viewModel)
         }

@@ -30,12 +30,4 @@ class AppContainerImpl(context: Context) : AppContainer {
         val localDataSource: LocalDataSource = ProductsLocalDataSource(dao)
         ProductsRepositoryImpl.getInstance(remoteDataSource, localDataSource)
     }
-
-    override val favFactory: FavProductFactory by lazy {
-        FavProductFactory(repo)
-    }
-
-    override val allFactory: AllProductFactory by lazy {
-        AllProductFactory(repo)
-    }
 }
